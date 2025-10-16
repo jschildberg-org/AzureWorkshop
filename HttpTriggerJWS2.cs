@@ -3,18 +3,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
-namespace JWS2.Function;
+namespace JWS.Function;
 
-public class HttpTriggerJWS2
+public class HttpTriggerJWS
 {
-    private readonly ILogger<HttpTriggerJWS2> _logger;
+    private readonly ILogger<HttpTriggerJWS> _logger;
 
-    public HttpTriggerJWS2(ILogger<HttpTriggerJWS2> logger)
+    public HttpTriggerJWS(ILogger<HttpTriggerJWS> logger)
     {
         _logger = logger;
     }
 
-    [Function("HttpTriggerJWS2")]
+    [Function("HttpTriggerJWS")]
     public IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
     {
         _logger.LogInformation("C# HTTP trigger function processed a request.");
